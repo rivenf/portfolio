@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto&display=swap');
+
+:root{
+  --background: #fcfbf3;
+  --text: #221307;
+  --accent1: #1994f3;
+  --accent2: #3E6A18;
+  --accent2-alt: #202C13;
+  --box-shadow: rgba(10, 10, 10, 0.3);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  background-image: url('images/church-on-sunday.svg');
+  color: var(--text);
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header and navigation */
+header{
+  background-color: var(--accent2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 20px 10% 0 10%;
+  width: 100vw;
+  height: 90px;
+  display: flex;
+  align-items: baseline;
+}
+
+header h1{
+  color: var(--background);
+  margin: 0;
+  margin-right: 20px;
+  font-family: 'Kaushan Script', Georgia, 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  text-shadow: 3px 3px 2px var(--accent2-alt);
+}
+
+nav {
+  display: flex;
+}
+
+.navLink{
+  text-decoration: none;
+  color: var(--background);
+  margin: 5px 10px;
+  font-size: 1.25rem;
+}
+
+.navLink:hover{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#hamburger{
+  display: none;
+}
+
+/* Content */
+.innerContainer{
+  width: 100%;
+  min-height: 80vh;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  width: 80%;
+  min-height: 60vh;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px var(--box-shadow);
+  background-color: var(--background);
+}
+
+h2{
+  color: var(--accent2);
+  font-family: 'Kaushan Script', Georgia, 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+h3{
+  color: var(--accent2);
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+}
+
+.smallText{
+  font-size: .75rem;
+}
+
+
+
+/* About section */
+.containImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutImg{
+  max-width: 300px;
+  margin: 20px;
+  border-radius: 50%;
+  box-sizing: unset;
+  border: 5px solid var(--accent1);
+  box-shadow: 0px 0px 5px 3px var(--box-shadow);
+}
+
+.aboutGrid{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+
+.socialIcons{
+  color: var(--accent2);
+  font-size: 2rem;
+  letter-spacing: 0.5em;
+  margin: 20px 0;
+}
+
+.socialIcons a{
+  text-decoration: none;
+  color: var(--accent2);
+}
+
+/* Gallery section */
+.galleryGrid{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.galleryCard{
+  margin: 10px;
+  padding: 10px;
+  width: auto;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.galleryImg{
+  width: 100%;
+  border: 1px solid var(--text);
+  cursor: pointer;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 75px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modalActive{
+  display: initial;
+}
+
+.modalClose{
+  color: var(--background);
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+  right: 15vw;
+  cursor: pointer;
+}
+
+.modalContent{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  margin: auto;
+}
+
+.modalImg{
+  width: 100%;
+  border: 1px solid var(--text);
+  margin: 10px 0;
+}
+
+/* Tablet and mobile friendly */
+@media screen and (max-width: 900px){
+  .aboutGrid{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .galleryGrid{
+    grid-template-columns: 50% 50%;
+  }
+
+  header{
+    justify-content: space-between;
+    height: 75px;
+    padding-top: 10px;
+  }
+
+  header h1{
+    font-size: 2.75rem;
+  }
+
+  .navLink{
+    font-size: 1rem;
+  }
+
+  .modalContent{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px){
+  #hamburger{
+    display: initial;
+    color: var(--background);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  nav{
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: auto;
+    background: rgba(10, 10, 10, 0.6);;
+  }
+
+  .navLink{
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .aboutImg{
+    max-width: 200px;
+  }
+
+  .content{
+    padding: 15px;
+  }
+
+  .galleryGrid{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialIcons{
+    display: flex;
+    justify-content: center;
+  }
+}
