@@ -1,38 +1,158 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto&display=swap");
+
+:root {
+  --background: #ffffff;
+  --text: #14213d;
+  --highlight: #e5e5e5;
+  --accent1: #426ea9;
+  --accent2: #3f9741;
+  --box-shadow: rgba(10, 10, 10, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  /* background-image: url("images/church-on-sunday.svg"); */
+  color: var(--text);
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  text-align: justify;
+}
+
+.header {
+  background-color: var(--accent2);
+  padding: 10px 5% 0 5%;
+  width: 100vw;
+  height: 75px;
+  align-items: baseline;
+}
+
+.header h1 {
+  color: var(--highlight);
+  margin: 0;
+  font-family: "Kaushan Script", Georgia, "Times New Roman", Times, serif;
+  font-size: 2.75rem;
+  text-shadow: 3px 3px 2px var(--text);
+}
+
+.container {
+  width: 90%;
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px var(--box-shadow);
+  background-color: var(--background);
+}
+
+h2 {
+  color: var(--accent2);
+  font-family: "Kaushan Script", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+h3 {
+  color: var(--accent2);
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aboutImg {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto 0px auto;
+  border-radius: 50%;
+  border: 5px solid var(--accent1);
+  box-shadow: 0px 0px 5px 3px var(--box-shadow);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.galleryCard {
+  margin: 20px 0px;
+  padding: 10px;
+  width: auto;
+  border: 1px solid var(--text);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.galleryImg {
+  width: 100%;
+  border: 1px solid var(--text);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer {
+  background-color: var(--accent2);
+  color: var(--highlight);
+  padding: 10px 5% 20px 5%;
+  width: 100vw;
+  height: 90px;
+  font-size: 0.75rem;
+}
+
+.socialIcons {
+  color: var(--accent1);
+  font-size: 2rem;
+  letter-spacing: 0.5em;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  color: var(--accent1);
+}
+
+/********** Media Queries **********/
+@media screen and (min-width: 768px) {
+  .header {
+    height: 100px;
+    padding-top: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .aboutGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .aboutImg {
+    margin: 0px 0px 0px 30px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .galleryCard {
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: 33.3% 33.3% 33.3%;
   }
 }
