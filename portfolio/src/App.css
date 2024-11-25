@@ -38,6 +38,7 @@
 
 header {
   border-bottom: 1px solid var(--highlight);
+  margin-bottom: 30px;
 }
 
 header h1 {
@@ -102,12 +103,14 @@ h3 {
 }
 
 .overlayContainer {
-  width: 50%;
-  height: 50%;
   background: var(--background);
   color: var(--text);
-  border-radius: 20px;
   padding: 20px;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--background);
+  text-align: justify;
 }
 
 .footer {

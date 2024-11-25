@@ -13,10 +13,6 @@ function ProjectCard({ project }) {
           className="galleryImg"
         />
         <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <a href={project.link} target="_blank">
-          Link to GitHub
-        </a>
         <button className="galleryBtn" onClick={() => setIsOpen(true)}>
           View details
         </button>
@@ -26,6 +22,10 @@ function ProjectCard({ project }) {
           <div className="overlayContainer">
             <p>Pictures go here - todo later</p>
             <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.link} target="_blank">
+              Link to GitHub
+            </a>
             <button className="galleryBtn" onClick={() => setIsOpen(false)}>
               Close
             </button>
@@ -44,7 +44,7 @@ export default function Gallery() {
       <h2>Portfolio</h2>
       <div className="gallery">
         {projects.map((project) => (
-          <ProjectCard project={project} />
+          <ProjectCard project={project} key={project.id} />
         ))}
       </div>
     </div>
