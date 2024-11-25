@@ -1,8 +1,13 @@
+import SocialIcons from "./SocialIcons.js";
+
 export default function Footer() {
+  const d = new Date();
+  let year = d.getFullYear();
+
   return (
     <div className="footer">
-      <div className="socialIcons"></div>
-      <p>Copyright © 2022 Nico Rivera</p>
+      <SocialIcons />
+      <p>Copyright © {year} Nico Rivera</p>
     </div>
   );
 }

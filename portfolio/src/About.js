@@ -1,3 +1,5 @@
+import SocialIcons from "./SocialIcons.js";
+
 export default function About() {
   return (
     <div className="container">
@@ -19,6 +21,7 @@ export default function About() {
             I like to spend time indoors crafting, reading, or learning new
             programming skills.
           </p>
+          <SocialIcons />
         </div>
         <img src="images/Nico.jpg" alt="Nico Rivera" className="aboutImg" />
       </div>
