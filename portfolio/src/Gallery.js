@@ -1,8 +1,14 @@
 import projectData from "./projectData.json";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function ProjectCard({ project }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  function toggleOverlay() {
+    isOpen ? setIsOpen(false) : setIsOpen(true);
+  }
 
   return (
     <>
@@ -11,24 +17,34 @@ function ProjectCard({ project }) {
           src={project.thumbnail}
           alt={project.title}
           className="galleryImg"
+          onClick={toggleOverlay}
         />
-        <h3>{project.title}</h3>
-        <button className="galleryBtn" onClick={() => setIsOpen(true)}>
-          View details
-        </button>
+        <h3 className="galleryTitle" onClick={toggleOverlay}>
+          {project.title}
+        </h3>
       </div>
       {isOpen ? (
         <div className="overlay">
           <div className="overlayContainer">
-            <p>Pictures go here - todo later</p>
+            <button className="galleryBtn" onClick={toggleOverlay}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            {/* <img
+              src={project.thumbnail}
+              alt={project.title}
+              className="overlayImg"
+            /> */}
+            <p>Pictures go here - to do later</p>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a href={project.link} target="_blank">
-              Link to GitHub
-            </a>
-            <button className="galleryBtn" onClick={() => setIsOpen(false)}>
-              Close
-            </button>
+            <div className="projectLinks">
+              <a href={project.siteUrl} target="_blank" className="projectUrl">
+                View site
+              </a>
+              <a href={project.codeUrl} target="_blank" className="projectUrl">
+                View code
+              </a>
+            </div>
           </div>
         </div>
       ) : null}
