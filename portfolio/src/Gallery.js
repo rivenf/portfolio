@@ -29,12 +29,11 @@ function ProjectCard({ project }) {
             <button className="galleryBtn" onClick={toggleOverlay}>
               <FontAwesomeIcon icon={faXmark} />
             </button>
-            {/* <img
-              src={project.thumbnail}
+            <img
+              src={project.image}
               alt={project.title}
               className="overlayImg"
-            /> */}
-            <p>Pictures go here - to do later</p>
+            />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <div className="projectLinks">
